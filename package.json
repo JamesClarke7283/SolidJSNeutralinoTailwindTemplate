@@ -1,0 +1,37 @@
+{
+  "name": "neutralino-solid-starter",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A NeutralinoJS, SolidJS 2, and Tailwind CSS desktop starter with a typed event-driven counter.",
+  "license": "Apache-2.0",
+  "packageManager": "bun@1.4.3",
+  "engines": {
+    "bun": ">=1.4.3"
+  },
+  "scripts": {
+    "dev": "bun run --bun vite --host 127.0.0.1",
+    "build": "bun run typecheck && bun run --bun vite build",
+    "preview": "bun run --bun vite preview --host 127.0.0.1",
+    "typecheck": "bun run --bun tsc --noEmit",
+    "test:e2e": "bun run --bun playwright test",
+    "desktop:setup": "bun run --bun neu update",
+    "desktop": "bun run --bun neu run",
+    "desktop:build": "bun run --bun neu build",
+    "desktop:release": "bun run --bun neu build --release"
+  },
+  "dependencies": {
+    "@neutralinojs/lib": "6.10.0",
+    "@solidjs/web": "2.0.0-rc.16",
+    "solid-js": "2.0.0-rc.16"
+  },
+  "devDependencies": {
+    "@neutralinojs/neu": "11.8.0",
+    "@playwright/test": "1.64.1",
+    "@solidjs/vite-plugin": "3.0.0-next.50",
+    "@tailwindcss/vite": "4.3.3",
+    "tailwindcss": "4.3.3",
+    "typescript": "7.0.2",
+    "vite": "8.3.4"
+  }
+}

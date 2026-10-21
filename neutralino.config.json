@@ -1,0 +1,42 @@
+{
+  "applicationId": "dev.neutralino.solidstarter",
+  "version": "1.0.0",
+  "defaultMode": "window",
+  "port": 0,
+  "documentRoot": "/web-dist/",
+  "url": "/",
+  "enableServer": true,
+  "enableNativeAPI": true,
+  "tokenSecurity": "one-time",
+  "nativeAllowList": ["events.broadcast"],
+  "modes": {
+    "window": {
+      "title": "Counter — Neutralino + Solid",
+      "width": 1120,
+      "height": 860,
+      "minWidth": 390,
+      "minHeight": 600,
+      "center": true,
+      "resizable": true,
+      "enableInspector": true,
+      "exitProcessOnClose": true,
+      "injectGlobals": true,
+      "newWindowPolicy": "browser"
+    }
+  },
+  "cli": {
+    "binaryName": "solid-starter",
+    "resourcesPath": "/web-dist/",
+    "binaryVersion": "6.10.0",
+    "clientVersion": "6.10.0",
+    "distributionPath": "/dist/",
+    "frontendLibrary": {
+      "projectPath": "/",
+      "patchFile": "/index.html",
+      "devUrl": "http://127.0.0.1:5173",
+      "initCommand": "bun install",
+      "devCommand": "bun run dev",
+      "buildCommand": "bun run build"
+    }
+  }
+}

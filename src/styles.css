@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --color-ink: #30323e;
+  --color-muted: #878895;
+  --color-accent: #6560d9;
+  --color-line: #e9e9ee;
+  --color-surface: #f7f8fa;
+}
+
+:root { font-synthesis: none; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; color: var(--color-ink); background: var(--color-surface); }
+body { margin: 0; min-width: 320px; }
+button, a { -webkit-tap-highlight-color: transparent; }
+button { cursor: pointer; }
+button:disabled { cursor: default; }
+a { text-decoration: none; }
+button, a { outline-offset: 4px; }
+:focus-visible { outline: 2px solid var(--color-accent); }
+::selection { background: #dcd8ff; color: #373164; }
+
+.app-shell { background: radial-gradient(ellipse at 50% 22%, #fff 0%, #f8f9fb 70%); }
+.brand-mark { position: relative; display: block; width: 28px; height: 30px; }
+.brand-mark span { position: absolute; width: 18px; height: 22px; border: 1.5px solid #7270ab; border-radius: 5px; transform: skewY(-12deg); }
+.brand-mark span:first-child { top: 1px; left: 0; background: #eeedf7; }
+.brand-mark span:last-child { right: 0; bottom: 1px; background: #fff; }
+.counter-panel { background: radial-gradient(ellipse at 50% 38%, #f4f1ff 0%, #ece9fc 64%, #e7e5f8 100%); box-shadow: 0 4px 12px #44358a04; }
+.counter-center { min-height: 313px; }
+.counter-value { font-size: 108px; line-height: 1.35; letter-spacing: -6px; font-variant-numeric: tabular-nums; }
+.counter-value-long { font-size: clamp(30px, 5.6vw, 64px); letter-spacing: -2px; min-height: 146px; align-content: center; }
+.counter-button { display: inline-flex; height: 46px; flex: 1; align-items: center; justify-content: center; gap: 9px; border-radius: 10px; font-size: 12px; font-weight: 500; transition: background 150ms, box-shadow 150ms, transform 150ms; }
+.counter-button:active { transform: translateY(1px); }
+.counter-button-minus { border: 1px solid #d6d2ee; background: #ffffff6b; color: #70678e; }
+.counter-button-minus:hover { background: #fff; }
+.counter-button-plus { border: 1px solid #6259cb; background: #6960d8; color: #fff; box-shadow: 0 3px 6px #655bd026; }
+.counter-button-plus:hover { background: #5c52cb; box-shadow: 0 4px 10px #655bd03b; }
+.step-button { min-width: 30px; padding: 3px 7px; border: 1px solid transparent; border-radius: 5px; color: #8b84a6; font-size: 10px; transition: background 150ms; }
+.step-button.selected { border-color: #ded9ee; background: #fff; color: #69618b; box-shadow: 0 1px 3px #51416d08; }
+.step-button:hover { color: #4c4077; }
+.secondary-button { display: inline-flex; align-items: center; gap: 7px; color: #8a829e; font-size: 10px; transition: color 150ms; }
+.secondary-button:hover { color: #494064; }
+.event-log { height: 309px; scrollbar-width: thin; scrollbar-color: #dddded transparent; }
+.empty-orbit { box-shadow: 0 0 0 9px #fdfdfd, 0 0 0 10px #f8f8fb; }
+.event-dot, .status-dot { display: inline-block; width: 6px; height: 6px; flex-shrink: 0; border-radius: 50%; background: #8680d7; }
+.event-dot-down { background: #c69d78; }
+.event-dot-reset { background: #90a9a1; }
+.status-dot { width: 5px; height: 5px; background: #8bb4a1; }
+.status-dot-offline { background: #d5ad72; }
+kbd { display: inline-flex; min-width: 17px; height: 17px; align-items: center; justify-content: center; border: 1px solid #e5e5ec; border-radius: 4px; background: #fff; font: 10px var(--font-sans); color: #9291a2; box-shadow: 0 1px 1px #24224c06; }
+.stack-card { display: flex; align-items: center; gap: 12px; border: 1px solid var(--color-line); border-radius: 11px; background: #ffffffb3; padding: 18px 16px; transition: border-color 150ms, background 150ms; }
+.stack-card:hover { border-color: #d6d2ec; background: #fff; }
+.stack-icon { display: flex; width: 38px; height: 38px; flex-shrink: 0; align-items: center; justify-content: center; border-radius: 10px; }
+.version-tag { margin-left: 3px; font-family: var(--font-mono); font-size: 9px; font-weight: 400; color: #a3a3b2; white-space: nowrap; }
+
+@media (max-width: 1023px) and (min-width: 640px) { .workspace-grid { grid-template-columns: 1.25fr 1fr; } .stack-card { gap: 9px; padding: 14px 10px; } .stack-icon { width: 30px; height: 34px; } }
+@media (max-width: 639px) { .counter-center { min-height: 290px; padding-top: 24px; } .counter-value { font-size: 96px; } .counter-value-long { font-size: 38px; min-height: 130px; } .event-panel { min-height: 330px; } .event-log { height: 230px; } .doc-link { font-size: 11px; } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
